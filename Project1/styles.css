@@ -1,0 +1,75 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(252, 201, 74);
+}
+
+.font-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.adobe-font {
+    font-family: "gratia", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 150px;
+    color: rgb(250, 248, 104);
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+}
+
+#halo {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 80%);
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 80, 0.9) 0%,
+        rgba(255, 240, 80, 0.55) 25%,
+        rgba(255, 220, 80, 0.25) 45%,
+        rgba(255, 255, 0, 0) 70%
+    );
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#halo.sunrise {
+    animation: sunrise 2.5s ease-out forwards;
+}
+
+@keyframes sunrise {
+    0% {
+        transform: translate(-50%, 80%) scale(0.6);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0.4;
+    }
+
+    60% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+}
